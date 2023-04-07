@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(rgba(12, 3, 51, 0.3), rgba(12, 3, 51, 0.3));
+        position: relative;
+        padding: 0 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav {
+        width: 100%;
+        position: absolute;
+        top: -40px;
+        left: 0;
+        padding: 20px 8%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 35vh;
+    }
+
+
+    nav ul li {
+        list-style: none;
+        margin-left: 40px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 17px;
+        cursor: pointer;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .content {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .content h1 {
+        font-size: 60px;
+        color: #fff;
+        font-weight: 600;
+        margin-top: -60px;
+    }
+
+    .content a {
+        text-decoration: none;
+        display: inline-block;
+        color: #fff;
+        font-size: 24px;
+        border: 2px solid #fff;
+        padding: 14px 24px;
+        border-radius: 50px;
+        transition: 0.5s;
+        margin-top: 50px;
+    }
+
+    .btn {
+        text-decoration: none;
+        display: inline-block;
+        color: #fff;
+        background: transparent;
+        font-size: 24px;
+        padding: 14px 24px;
+        border: none;
+        transition: 0.5s;
+        margin-top: 50px;
+        cursor: pointer;
+    }
+
+
+    .output {
+        position: absolute;
+        margin-top: 450px;
+    }
+
+    .output h2 {
+        color: #fff;
+    }
+
+    .form {
+        display: inline;
+    }
+
+    .form input {
+        margin-left: 40px;
+        border-bottom: 1px solid #fff !important;
+        background: transparent;
+        border: none;
+        outline: none;
+    }
+
+    .logout {
+        display: block;
+    }
+
+    .output {
+        position: absolute;
+        margin-top: 550px;
+    }
+
+    .output h2 {
+        color: #fff;
+    }
+</style>
+
+<body>
+
+    <div class="hero">
+        <nav>
+            <img src="https://i.ibb.co/257JrqQ/85142727534443e2a9174a4bd3614c78-removebg-preview.png" class="logo"
+                alt="">
+            <ul>
+                <li><a href="/clear1">Clear the Screen</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <h1>Thank you for logging in Admin!</h1>
+            <a href="/withdraw">Withdraw Ethers</a>
+            <a href="/paused1">Check Sale Status</a>
+            <a href="/pause">Pause Sale</a>
+            <a href="/unpause">UnPause Sale</a>
+            <a href="/total1">Total Supply</a>
+            <a href="/max1">Max Supply</a>
+
+
+            <form action="owner" class="form">
+                <input style="text-decoration: none; color:#fff" type="text" name="token" required />
+                <button type="submit" class="btn">Enter Token ID &amp; Check Owner</button>
+            </form>
+
+            <div class="logout">
+                <a href="logout">Log out</a>
+            </div>
+        </div>
+
+
+        <div class="output">
+            {{#if with}}<h2>OUTPUT: WITHDRAW SUCCESS</h2>{{/if}}
+            {{#if max}}<h2>OUTPUT: MAX SUPPLY 100</h2>{{/if}}
+            {{#if check}}<h2>OUTPUT: SALE ACTIVE</h2>{{/if}}
+            {{#if unpause}}<h2>OUTPUT: SALE IS ACTIVE</h2>{{/if}}
+            {{#if pause}}<h2>OUTPUT: SALE IS PAUSED</h2>{{/if}}
+            {{#if total}}<h2>OUTPUT: TOTAL SUPPY: 1</h2>{{/if}}
+            {{#if own}}<h2>OUTPUT: OWNER {{data}}</h2>{{/if}}
+            {{#if token}}<h2>PLEASE PUT VALID TOKEN ID</h2>{{/if}}
+        </div>
+    </div>
+
+</body>
+
+</html>

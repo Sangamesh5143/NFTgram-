@@ -1,0 +1,135 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .login {
+      background-image: linear-gradient(rgba(12, 3, 51, 0.3), rgba(12, 3, 51, 0.3));
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      margin: auto;
+      position: absolute;
+      background-position: center;
+    }
+
+    .input-group-login {
+      top: 75px;
+      position: absolute;
+      width: 280px;
+      transition: .5s;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px 0;
+      margin: 5px 0;
+      border-left: 0;
+      border-top: 0;
+      border-right: 0;
+      border-bottom: 1px solid #999;
+      outline: none;
+      background: transparent;
+    }
+
+    .submit-btn {
+      width: 85%;
+      padding: 10px 30px;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+      background: #fff;
+      border: 0;
+      outline: none;
+      border-radius: 30px;
+    }
+
+    .check-box {
+      margin: 30px 10px 34px 0;
+    }
+
+    span {
+      color: #fff;
+      font-size: 12px;
+      bottom: 68px;
+      position: absolute;
+    }
+
+    #login {
+      left: 50px;
+    }
+
+    #login input {
+      color: white;
+      font-size: 15;
+    }
+
+    .form-box {
+      width: 380px;
+      height: 400px;
+      position: relative;
+      margin: 10% auto;
+      background: rgba(0, 0, 0, 0.266);
+      padding: 10px;
+      overflow: hidden;
+    }
+
+    ::placeholder {
+      color: #fff;
+    }
+
+    .invalid {
+      display: block;
+      color: white;
+      background: rgba(0, 0, 0, 0.266);
+      align-items: center;
+      width: 100%;
+      height: 7vh;
+    }
+
+    .invalid h2{
+      padding: 10px 10px;
+      margin-left: 300px;
+      margin-right: 300px;
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="login">
+    <div class="form-box">
+      <form id='login' action="/login1" class='input-group-login'>
+        <input type='text' class='input-field' name="iden" placeholder='Username' required>
+        <input type='password' class='input-field' name="pass" placeholder='Password' required>
+        <input type='checkbox' class='check-box'><span>Remember Password</span>
+        <button type='submit' class='submit-btn'>Log in</button>
+      </form>
+    </div>
+
+  </div>
+
+
+  {{#if check}}
+  <div class="invalid">
+
+    <h2><marquee>Invalid login Username and Password! Please enter valid credentials</marquee></h2>
+  </div>
+
+  {{/if}}
+</body>
+
+</html>
